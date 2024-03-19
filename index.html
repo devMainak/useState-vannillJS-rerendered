@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <button onclick="incrementCountOne()">Increment Count 1</button>
+  <button onclick="incrementCountTwo()">Increment Count 2</button>
+  <br>
+  <h3 id="countOne">Count 1: 0</h3>
+  <h3 id="countTwo">Count 2: 0</h3>
+  <h3 id="totalCount">Total Count: 0</h3>
+
+  <script>
+    const countOne = document.querySelector("#countOne")
+    const countTwo = document.querySelector("#countTwo")
+    const totalCount = document.querySelector("#totalCount")
+
+    let countForOne = 0;
+    const incrementCountOne = () => {
+      countForOne++
+      countOne.textContent = `Count 1: ${countForOne}`
+      updateTotalCount()
+    }
+
+    let countForTwo = 0;
+    const incrementCountTwo = () => {
+      countForTwo++
+      countTwo.textContent = `Count 2: ${countForTwo}`
+      updateTotalCount()
+    }
+
+    let totalCounts = 0
+    const updateTotalCount = () => {
+      totalCounts = countForOne + countForTwo
+      totalCount.textContent = `Total Count: ${totalCounts}`
+    }
+  </script>
+</body>
+
+</html>
